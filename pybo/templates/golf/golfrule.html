@@ -1,30 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container my-3">
-    <form method="post" class="post-form">
-        {{ form.csrf_token }}
-        {% include "form_errors.html" %}
-        <div class="form-group">
-            <label for="username">사용자 이름</label>
-            <input type="text" class="form-control" name="username" id="username"
-                   value="{{ form.username.data|default('', true) }}">
+  <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            티샷시 티 구역 밖에서 쳤다
+          </button>
+        </h4>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+          <div class="accordion-body">
+            <b>2벌타</b> 티마크 2개의 바깥쪽을 경계로 하여 측면이 2클럽 길이인 직사각형 구역외에서 치면 2벌타 후 다시 티구역 안에서 쳐야 한다.
+            <img src="iconmonstr-bus-1-240.png">
+          </div>
         </div>
-        <div class="form-group">
-            <label for="password1">비밀번호</label>
-            <input type="password" class="form-control" name="password1" id="password1"
-                   value="{{ form.password1.data|default('', true) }}">
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="headingTwo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            자신의 판단으로 잠정구를 3개나 쳤다
+          </button>
+        </h4>
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+          <div class="accordion-body">
+            <b>벌타 없음</b> 그대로 경기를 진행한다. OB가 될 염려가 있을때는 횟수에 제한 없이 잠정구 플레이를 선언하고 다른 볼을 칠수 있다. 단, 이것은 초구를 찾으러 가기 전까지
+            허용되며, 수색 도중에 걱정이 된다고 해서 잠정구를 치러 다시 돌아올 수는 없다. 만약 돌아와서 다시 치면 초구가 세이프라 해도 그 볼은 분실구로 취급된다.
+          </div>
         </div>
-        <div class="form-group">
-            <label for="password2">비밀번호 확인</label>
-            <input type="password" class="form-control" name="password2" id="password2"
-                   value="{{ form.password2.data|default('', true) }}">
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            티마크의 위치를 바꿨다.
+          </button>
+        </h4>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
+          <div class="accordion-body">
+            <b>경기 실격</b> 티마커는 그 홀의 제1타를 칠 때까지는 고정물로 간주하므로 뽑거나 이동할 수 없다. 단, 그 팀의 누군가가 아직 스트로크하기 전에 티를
+            원래 위치에 되돌려 놓은 경우에는 벌타를 수정하여 2벌타가 된다.
+          </div>
         </div>
-        <div class="form-group">
-            <label for="email">이메일</label>
-            <input type="text" class="form-control" name="email" id="email"
-                   value="{{ form.email.data|default('', true) }}">
+      </div>
+      <div class="accordion-item">
+        <h4 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            티 대신 모래를 돋우고 볼을 놓고 쳤다.
+          </button>
+        </h4>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample" style="">
+          <div class="accordion-body">
+            <b>벌타 없음</b> 티잉 그라운데에서의 제1타를 치는 경우에 한해 티 위에 볼을 올려 놓고 치는 것이 허용된다
+            그 외에도 모래나 흙을 동우고 그 위에 볼을 놓고 치는 것도 인정된다
+            또한 울퉁불퉁한 지면을 편평하게 고르거나, 이슬.서리.물  등을 제거하는 것도 허용 된다
+            </div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary">생성하기</button>
-    </form>
+      </div>
 </div>
 {% endblock %}

@@ -41,6 +41,10 @@ def create_app():
     app.register_blueprint(comment_views.bp)
     app.register_blueprint(vote_views.bp)
 
+    from .views import golf_views, mainscreen_views
+    app.register_blueprint(golf_views.bp)
+    app.register_blueprint(mainscreen_views.bp)
+
     # 필터
     from .filter import format_datetime
     app.jinja_env.filters['datetime'] = format_datetime
