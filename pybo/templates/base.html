@@ -7,15 +7,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
     <!-- pybo CSS -->
-
-
-<!--    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-
-     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"> -->
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-    <title>한석희</title>
+    <title>Welcome</title>
 </head>
 <body>
 {% include "navbar.html" %}
@@ -28,6 +22,15 @@
 <!-- Bootstrap JS -->
 <script src="{{ url_for('static', filename='jquery.js') }}"></script>
 <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
+
+
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Han Website 2021</p>
+    </div>
+  </footer>
+
 
 <!-- 자바스크립트 Start -->
 {% block script %}
